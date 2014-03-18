@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		{% stylesheets filter='cssrewrite,?yui_css' '@MopaBootstrapBundle/Resources/bootstrap/dist/css/*'%}
+			<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+		{% endstylesheets %}
+		{% stylesheets filter='cssrewrite,?yui_css' '@MopaBootstrapBundle/Resources/bootstrap/docs/assets/css/*'%}
+			<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+		{% endstylesheets %}
+		
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block title %}SdzBlog{% endblock %}</title>
+	</head>
+  <body>
+
+    {% block body %}
+    {% endblock %}
+
+  </body>
+</html>
+
+<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+</script>
+
