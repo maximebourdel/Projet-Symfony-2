@@ -34,5 +34,14 @@
       Supprimer l'article
     </a>
   </p>
+  
+  {% for commentaire in liste_commentaires %}           
+     <div class="well">
+  		{{ commentaire.contenu }}
+  	 </div>
+  {% endfor %}
+ 
+   
+
 
 {% endblock %}

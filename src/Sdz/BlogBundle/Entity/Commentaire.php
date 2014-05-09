@@ -22,6 +22,13 @@ class Commentaire
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Sdz\BlogBundle\Entity\Article")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
+    
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="auteur", type="string", length=255)
@@ -42,6 +49,14 @@ class Commentaire
      */
     private $date;
 
+    
+    
+    public function __construct()
+    {
+    	$this->date = new \Datetime();
+    }
+    
+    
 
     /**
      * Get id
@@ -52,7 +67,27 @@ class Commentaire
     {
         return $this->id;
     }
-
+    
+    /**
+     * Set article
+     *
+     * @param Sdz\BlogBundle\Entity\Article $article
+     */
+    public function setArticle(\Sdz\BlogBundle\Entity\Article $article)
+    {
+    	$this->article = $article;
+    }
+    
+    /**
+     * Get article
+     *
+     * @return Sdz\BlogBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+    	return $this->article;
+    }    
+    
     /**
      * Set auteur
      *

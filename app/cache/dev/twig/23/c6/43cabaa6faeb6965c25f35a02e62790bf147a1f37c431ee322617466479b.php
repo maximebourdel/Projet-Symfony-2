@@ -120,11 +120,14 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         echo "</title>
 \t</head>
   <body>
+  
+  \t
+  
 
     ";
-        // line 20
+        // line 23
         $this->displayBlock('body', $context, $blocks);
-        // line 22
+        // line 25
         echo "
   </body>
 </html>
@@ -144,10 +147,10 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         echo "SdzBlog";
     }
 
-    // line 20
+    // line 23
     public function block_body($context, array $blocks = array())
     {
-        // line 21
+        // line 24
         echo "    ";
     }
 
@@ -163,6 +166,6 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 
     public function getDebugInfo()
     {
-        return array (  151 => 21,  148 => 20,  142 => 16,  128 => 22,  126 => 20,  119 => 16,  114 => 13,  100 => 11,  95 => 10,  33 => 8,  21 => 1,  94 => 32,  87 => 28,  80 => 24,  73 => 20,  65 => 17,  60 => 15,  57 => 14,  49 => 12,  46 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 7,);
+        return array (  154 => 24,  151 => 23,  145 => 16,  131 => 25,  129 => 23,  119 => 16,  114 => 13,  100 => 11,  95 => 10,  33 => 8,  29 => 7,  21 => 1,);
     }
 }

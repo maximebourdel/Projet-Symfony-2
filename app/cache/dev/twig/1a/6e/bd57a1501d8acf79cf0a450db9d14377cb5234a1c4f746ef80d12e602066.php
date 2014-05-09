@@ -97,6 +97,28 @@ class __TwigTemplate_1a6ebd57a1501d8acf79cf0a450db9d14377cb5234a1c4f746ef80d12e6
       Supprimer l'article
     </a>
   </p>
+  
+  ";
+        // line 38
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["liste_commentaires"]) ? $context["liste_commentaires"] : $this->getContext($context, "liste_commentaires")));
+        foreach ($context['_seq'] as $context["_key"] => $context["commentaire"]) {
+            echo "           
+     <div class=\"well\">
+  \t\t";
+            // line 40
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["commentaire"]) ? $context["commentaire"] : $this->getContext($context, "commentaire")), "contenu"), "html", null, true);
+            echo "
+  \t </div>
+  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['commentaire'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 43
+        echo " 
+   
+
 
 ";
     }
@@ -113,6 +135,6 @@ class __TwigTemplate_1a6ebd57a1501d8acf79cf0a450db9d14377cb5234a1c4f746ef80d12e6
 
     public function getDebugInfo()
     {
-        return array (  94 => 32,  87 => 28,  80 => 24,  73 => 20,  65 => 17,  60 => 15,  57 => 14,  49 => 12,  46 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  119 => 43,  110 => 40,  103 => 38,  94 => 32,  87 => 28,  80 => 24,  73 => 20,  65 => 17,  60 => 15,  57 => 14,  49 => 12,  46 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }
