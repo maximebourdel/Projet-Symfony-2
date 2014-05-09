@@ -29,6 +29,10 @@ class Article
      */
     private $date;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Sdz\BlogBundle\Entity\Categorie", cascade={"persist"})
+     */
+    private $categories;
     
     
     /**
@@ -69,8 +73,8 @@ class Article
     {
         $this->date = new \Datetime();
         $this->publication = true;
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -96,6 +100,38 @@ class Article
     public function getImage()
     {
     	return $this->image;
+    }
+    
+    /**
+     * Add categories
+     *
+     * @param Sdz\BlogBundle\Entity\Categorie $categories
+     */
+    public function addCategorie(\Sdz\BlogBundle\Entity\Categorie $categorie) // addCategorie sans « s » !
+    {
+    	// Ici, on utilise l'ArrayCollection vraiment comme un tableau, avec la syntaxe []
+    	$this->categories[] = $categorie;
+    }
+    
+    /**
+     * Remove categories
+     *
+     * @param Sdz\BlogBundle\Entity\Categorie $categories
+     */
+    public function removeCategorie(\Sdz\BlogBundle\Entity\Categorie $categorie) // removeCategorie sans « s » !
+    {
+    	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
+    	$this->categories->removeElement($categorie);
+    }
+    
+    /**
+     * Get categories
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getCategories() // Notez le « s », on récupère une liste de catégories ici !
+    {
+    	return $this->categories;
     }
     
     /**

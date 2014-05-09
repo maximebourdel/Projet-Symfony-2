@@ -204,3 +204,11 @@ dabf80,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/18,13
 063e35,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/18,1399644377,
 547366,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399644380,
 b2175c,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/modifier/1,1399644405,
+25bdfa,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662514,fb8d56
+fb8d56,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662514,
+14ff2b,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662537,4b7ccf
+4b7ccf,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662537,
+88d9a4,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662538,5f1948
+5f1948,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662538,
+87effc,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662677,3d7d4a
+3d7d4a,127.0.0.1,GET,http://localhost/Symfony/web/app_dev.php/blog/article/1,1399662677,
