@@ -2806,6 +2806,9 @@
       <argument type="service" id="templating.loader"/>
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="templating.globals"/>
+      <call method="setCharset">
+        <argument>UTF-8</argument>
+      </call>
       <call method="setHelpers">
         <argument type="collection">
           <argument key="slots">templating.helper.slots</argument>
@@ -2829,7 +2832,6 @@
       <argument type="service" id="templating.name_parser"/>
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="debug.stopwatch"/>
-      <argument type="service" id="templating.globals"/>
       <call method="setDefaultEscapingStrategy">
         <argument type="collection">
           <argument type="service" id="templating"/>
@@ -2963,6 +2965,15 @@
                 <service class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
               </argument>
             </argument>
+            <call method="setUsername">
+              <argument>bourdel.maxime.pro@gmail.com</argument>
+            </call>
+            <call method="setPassword">
+              <argument>null</argument>
+            </call>
+            <call method="setAuthMode">
+              <argument>login</argument>
+            </call>
           </service>
         </argument>
       </argument>
@@ -2975,15 +2986,6 @@
       </call>
       <call method="setEncryption">
         <argument>ssl</argument>
-      </call>
-      <call method="setUsername">
-        <argument>bourdel.maxime.pro@gmail.com</argument>
-      </call>
-      <call method="setPassword">
-        <argument>null</argument>
-      </call>
-      <call method="setAuthMode">
-        <argument>login</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>

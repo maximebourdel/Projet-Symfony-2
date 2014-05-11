@@ -1,108 +1,187 @@
-{% extends "SdzBlogBundle::layout.html.twig" %}
-
-{% block title %}{{ parent() }} - Index{% endblock %}
-
-{% block body %}
- 
+{% extends "SdzBlogBundle::layout.html.twig" %} {% block title %}{{
+parent() }} - Index{% endblock %} {% block body %}
 
 
 
-<header role="banner" id="top" class="navbar navbar-static-top bs-docs-nav">
-  <div class="container">
-    <div class="navbar-header">
-      <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-    </div>
-    <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="#">Accueil</a>
-        </li>
-        <li>
-          <a href="{{ path('sdzblog_ajouter') }}">Ajouter Article</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Expo']);" href="http://expo.getbootstrap.com">Expo</a></li>
-        <li><a onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Blog']);" href="http://blog.getbootstrap.com">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
+
+<header role="banner" id="top"
+	class="navbar navbar-static-top bs-docs-nav">
+	<div class="container">
+		<div class="navbar-header">
+			<button data-target=".bs-navbar-collapse" data-toggle="collapse"
+				type="button" class="navbar-toggle">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+
+		</div>
+		<nav role="navigation"
+			class="collapse navbar-collapse bs-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Accueil</a></li>
+				<li><a href="{{ path('sdzblog_ajouter') }}">Ajouter Article</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a
+					onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Expo']);"
+					href="http://expo.getbootstrap.com">Expo</a></li>
+				<li><a
+					onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Blog']);"
+					href="http://blog.getbootstrap.com">Blog</a></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 
-      <div id="content" class="bs-docs-header">
-      <div class="container">
-        
-        <h1>Maxime Bourdel</h1>
-        
-        <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+<div id="content" class="bs-docs-header">
+	<div class="container">
 
-      </div>
-    </div>
+		<h1>Maxime Bourdel</h1>
 
-      </div>
-    
+		<div id="carbonads-container">
+			<div class="carbonad">
+				<div id="azcarbon"></div>
+				<script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+</div>
+<div class="container">
+	<div class="progress">
+		<div style="width: 25%" class="progress-bar progress-bar-info">
+			
+		</div>
+		<div style="width: 25%" class="progress-bar progress-bar-success">
+			
+		</div>
+		<div style="width: 25%" class="progress-bar progress-bar-danger">
+			
+		</div>
+		<div style="width: 25%" class="progress-bar progress-bar-warning">
+			
+		</div>
+
+	</div>
+</div>
+
+<div class="container">OK, même s'il est pour l'instant un peu vide, mon
+	blog sera trop bien !</div>
+</br>
+<div class="container">
+	<div class="col-sm-d">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapseOne"> NUMBER 1 </a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse">
+					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+						officia aute, non cupidatat skateboard dolor brunch. Food truck
+						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+						aliqua put a bird on it squid single-origin coffee nulla assumenda
+						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+						wes anderson cred nesciunt sapiente ea proident. Ad vegan
+						excepteur butcher vice lomo. Leggings occaecat craft beer
+						farm-to-table, raw denim aesthetic synth nesciunt you probably
+						haven't heard of them accusamus labore sustainable VHS.</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapseTwo"> NUMBER 2 </a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse">
+					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+						officia aute, non cupidatat skateboard dolor brunch. Food truck
+						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+						aliqua put a bird on it squid single-origin coffee nulla assumenda
+						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+						wes anderson cred nesciunt sapiente ea proident. Ad vegan
+						excepteur butcher vice lomo. Leggings occaecat craft beer
+						farm-to-table, raw denim aesthetic synth nesciunt you probably
+						haven't heard of them accusamus labore sustainable VHS.</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapseThree"> NUMBER 3 </a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse">
+					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+						officia aute, non cupidatat skateboard dolor brunch. Food truck
+						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+						aliqua put a bird on it squid single-origin coffee nulla assumenda
+						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+						wes anderson cred nesciunt sapiente ea proident. Ad vegan
+						excepteur butcher vice lomo. Leggings occaecat craft beer
+						farm-to-table, raw denim aesthetic synth nesciunt you probably
+						haven't heard of them accusamus labore sustainable VHS.</div>
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+							href="#collapseFour"> Collapsible Group Item #4 </a>
+					</h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse">
+					<div class="panel-body">dfsdjfsjfjslfskfsfsm;,dsfm,smfsm
+						nbfdfkjsbfsnfsf;:vn:c,;:vxvnfdgjl:dgjnkdjk
+						ngdlfgjndl:v,v;nxckjlwsf xbgkh:lvkd!dffcjml,xd
+						nffdsljfsf,lnvvc,!x,kdlvfkc!f,v fdn:c</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div class="container">
-    OK, même s'il est pour l'instant un peu vide, mon blog sera trop bien !
-    
-    
-   
-    <div id="accordion">
-<h3>Section 1</h3>
-<div>
-<p>
-Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-</p>
-</div>
-<h3>Section 2</h3>
-<div>
-<p>
-Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-suscipit faucibus urna.
-</p>
-</div>
-<h3>Section 3</h3>
-<div>
-<p>
-Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-</p>
-<ul>
-<li>List item one</li>
-<li>List item two</li>
-<li>List item three</li>
-</ul>
-</div>
-<h3>Section 4</h3>
-<div>
-<p>
-Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-mauris vel est.
-</p>
-<p>
-Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos himenaeos.
-</p>
-</div>
-</div>
+<div data-ride="carousel" class="carousel slide" id="carousel-example-generic">
+      <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#carousel-example-generic"></li>
+        <li data-slide-to="1" data-target="#carousel-example-generic" class=""></li>
+        <li data-slide-to="2" data-target="#carousel-example-generic" class=""></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img alt="First slide" data-src="holder.js/900x500/auto/#777:#555/text:First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
+        </div>
+        <div class="item">
+          <img alt="Second slide" data-src="holder.js/900x500/auto/#666:#444/text:Second slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==">
+        </div>
+        <div class="item">
+          <img alt="Third slide" data-src="holder.js/900x500/auto/#555:#333/text:Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
+        </div>
+      </div>
+      <a data-slide="prev" href="#carousel-example-generic" class="left carousel-control">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a data-slide="next" href="#carousel-example-generic" class="right carousel-control">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
 </div>
 
-	
-    
+
+
+
+
 {% endblock %}

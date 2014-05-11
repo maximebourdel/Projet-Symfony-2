@@ -46,4 +46,24 @@ return array (
       ),
     ),
   ),
+  '93d9c5a' => 
+  array (
+    0 => 
+    array (
+      0 => '@MopaBootstrapBundle/Resources/bootstrap/js/*',
+    ),
+    1 => 
+    array (
+    ),
+    2 => 
+    array (
+      'output' => '_controller/js/93d9c5a.js',
+      'name' => '93d9c5a',
+      'debug' => NULL,
+      'combine' => NULL,
+      'vars' => 
+      array (
+      ),
+    ),
+  ),
 );

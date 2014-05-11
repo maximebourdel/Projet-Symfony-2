@@ -14,7 +14,8 @@ class Categories implements FixtureInterface
   {
     // Liste des noms de catégorie à ajouter
     $noms = array('Symfony2', 'Doctrine2', 'Tutoriel', 'Évènement');
-
+	
+    
     foreach($noms as $i => $nom)
     {
       // On crée la catégorie
