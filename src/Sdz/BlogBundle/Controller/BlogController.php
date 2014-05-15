@@ -9,6 +9,7 @@ use Symfony\Component\Httpfoundation\Response;
 use Sdz\BlogBundle\Entity\Article;
 use Sdz\BlogBundle\Entity\Image;
 use Sdz\BlogBundle\Entity\Commentaire;
+use Sdz\BlogBundle\Entity\ArticleCompetence;
 
 class BlogController extends Controller {
 	public function indexAction($page) {
@@ -42,10 +43,16 @@ class BlogController extends Controller {
 				'article' => $id 
 		) );
 		
+
+		// On récupère les articleCompetence pour l'article $article
+		$liste_articleCompetence = $em->getRepository('SdzBlogBundle:ArticleCompetence')
+		->findByArticle($article->getId());
+		
 		// Puis modifiez la ligne du render comme ceci, pour prendre en compte l'article :
 		return $this->render ( 'SdzBlogBundle:Blog:voir.html.twig', array (
 				'article' => $article,
-				'liste_commentaires' => $liste_commentaires 
+				'liste_commentaires' => $liste_commentaires,
+				'liste_articleCompetence' => $liste_articleCompetence
 		) );
 	}
 	public function ajouterAction() {
@@ -94,6 +101,32 @@ class BlogController extends Controller {
 		// Étape 2 : on déclenche l'enregistrement
 		$em->flush ();
 		
+		// Les compétences existent déjà, on les récupère depuis la bdd
+		$liste_competences = $em->getRepository('SdzBlogBundle:Competence')
+		->findAll(); // Pour l'exemple, notre Article contient toutes les Competences
+		
+		// Pour chaque compétence
+		foreach($liste_competences as $i => $competence)
+		{
+			// On crée une nouvelle « relation entre 1 article et 1 compétence »
+			$articleCompetence[$i] = new ArticleCompetence;
+		
+			// On la lie à l'article, qui est ici toujours le même
+			$articleCompetence[$i]->setArticle($article);
+			// On la lie à la compétence, qui change ici dans la boucle foreach
+			$articleCompetence[$i]->setCompetence($competence);
+		
+			// Arbitrairement, on dit que chaque compétence est requise au niveau 'Expert'
+			$articleCompetence[$i]->setNiveau('Expert');
+		
+			// Et bien sûr, on persiste cette entité de relation, propriétaire des deux autres relations
+			$em->persist($articleCompetence[$i]);
+		}
+		
+		// On déclenche l'enregistrement
+		$em->flush();
+		
+		
 		// Reste de la méthode qu'on avait déjà écrit
 		if ($this->getRequest ()->getMethod () == 'POST') {
 			$this->get ( 'session' )->getFlashBag ()->add ( 'info', 'Article bien enregistré' );
@@ -133,8 +166,6 @@ class BlogController extends Controller {
 		$em->flush ();
 		
 		return new Response ( 'OK' );
-		
-		// … reste de la méthode
 	}
 	
 	// Suppression des catégories d'un article :
