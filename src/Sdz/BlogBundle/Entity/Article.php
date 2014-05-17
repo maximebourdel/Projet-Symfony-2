@@ -68,12 +68,20 @@ class Article
      */
     private $publication;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Sdz\BlogBundle\Entity\Commentaire", mappedBy="article")
+     */
+    private $commentaires; // Ici commentaires prend un « s », car un article a plusieurs commentaires !
+    
+    
     // Et modifions le constructeur pour mettre cet attribut publication à true par défaut
     public function __construct()
     {
         $this->date = new \Datetime();
         $this->publication = true;
         $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        // Rappelez-vous, on a un attribut qui doit contenir un ArrayCollection, on doit l'initialiser dans le constructeur
+        $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -133,6 +141,24 @@ class Article
     {
     	return $this->categories;
     }
+    
+    public function addCommentaire(\Sdz\BlogBundle\Entity\Commentaire $commentaire)
+    {
+    	$this->commentaires[] = $commentaire;
+    	$commentaires->setArticle($this); // On ajoute ceci
+    	return $this;
+    }
+    
+    public function removeCommentaire(\Sdz\BlogBundle\Entity\Commentaire $commentaire)
+    {
+    	$this->commentaires->removeElement($commentaire);
+    }
+    
+    public function getCommentaires()
+    {
+    	return $this->commentaires;
+    }
+    
     
     /**
      * Set date
