@@ -32,8 +32,11 @@ class BlogController extends Controller {
 		$em = $this->getDoctrine ()->getManager ();
 		
 		// On récupère l'entité correspondant à l'id $id
-		$article = $em->getRepository ( 'SdzBlogBundle:Article' )->find ( $id );
-		
+		$article = $em->getRepository ( 'SdzBlogBundle:Article' )->find( $id );
+
+		//test
+		$liste_articles = $em->getRepository('SdzBlogBundle:Article')->myFindAll();
+				
 		if ($article === null) {
 			throw $this->createNotFoundException ( 'Article[id=' . $id . '] inexistant.' );
 		}
@@ -52,7 +55,8 @@ class BlogController extends Controller {
 		return $this->render ( 'SdzBlogBundle:Blog:voir.html.twig', array (
 				'article' => $article,
 				'liste_commentaires' => $liste_commentaires,
-				'liste_articleCompetence' => $liste_articleCompetence
+				'liste_articleCompetence' => $liste_articleCompetence,
+				'liste_articles' => $liste_articles
 		) );
 	}
 	public function ajouterAction() {
@@ -61,7 +65,10 @@ class BlogController extends Controller {
 		$article->setTitre ( 'Mon dernier weekend' );
 		$article->setContenu ( "C'était vraiment super et on s'est bien amusé." );
 		$article->setAuteur ( 'winzou' );
+
+
 		
+				
 		// Création d'un premier commentaire
 		$commentaire1 = new Commentaire ();
 		$commentaire1->setAuteur ( 'winzou' );
