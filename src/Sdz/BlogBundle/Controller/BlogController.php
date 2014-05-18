@@ -41,6 +41,10 @@ class BlogController extends Controller {
 			throw $this->createNotFoundException ( 'Article[id=' . $id . '] inexistant.' );
 		}
 		
+		$quoi = $em->getRepository ( 'SdzBlogBundle:Article' )->getAvecCategories(array('Tutoriel'));
+		
+		
+		
 		// On récupère la liste des commentaires
 		$liste_commentaires = $em->getRepository ( 'SdzBlogBundle:Commentaire' )->findBy ( array (
 				'article' => $id 

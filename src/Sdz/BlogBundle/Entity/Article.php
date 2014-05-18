@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Sdz\BlogBundle\Entity\ArticleRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Article
 {
@@ -73,6 +74,10 @@ class Article
      */
     private $commentaires; // Ici commentaires prend un « s », car un article a plusieurs commentaires !
     
+    /**
+    * @ORM\Column(name="nbCommentaires", type="integer")
+    */
+    private $nbCommentaires;
     
     // Et modifions le constructeur pour mettre cet attribut publication à true par défaut
     public function __construct()
@@ -82,6 +87,7 @@ class Article
         $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
         // Rappelez-vous, on a un attribut qui doit contenir un ArrayCollection, on doit l'initialiser dans le constructeur
         $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
+    	$this->nbCommentaires = 0;
     }
 
     /**
@@ -273,5 +279,13 @@ class Article
     public function getPublication()
     {
         return $this->publication;
+    }
+    
+    /**
+     * @ORM\PreUpdate
+     */
+    public function updateDate()
+    {
+    	$this->setDateEdition(new \Datetime());
     }
 }

@@ -1,7 +1,6 @@
 {% extends "SdzBlogBundle::layout.html.twig" %} {% block title %}
 Lecture d'un article - {{ parent() }} {% endblock %} {% block body %}
 
-
 <h2>
 	{# On vérifie qu'une image soit bien associée à l'article #} 
 	{% if article.image is not null %} 
@@ -36,7 +35,11 @@ Lecture d'un article - {{ parent() }} {% endblock %} {% block body %}
             {% endfor %}
         </ul>
     </div>
-  {% endif %}
+{% endif %}
+
+{% for article in liste_articles %}
+	<div class="well">{{ article.titre }}</div>
+{% endfor %} 
 
 
 

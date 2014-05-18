@@ -54,6 +54,7 @@ class Commentaire
     public function __construct()
     {
     	$this->date = new \Datetime();
+    	$this->increase();
     }
     
     
@@ -155,5 +156,23 @@ class Commentaire
     public function getDate()
     {
         return $this->date;
+    }
+    
+    /**
+     * @ORM\prePersist
+     */
+    public function increase()
+    {
+    	$nbCommentaires = $this->getArticle()->getNbCommentaires();
+    	$this->getArticle()->setNbCommentaires($nbCommentaires+1);
+    }
+    
+    /**
+     * @ORM\preRemove
+     */
+    public function decrease()
+    {
+    	$nbCommentaires = $this->getArticle()->getNbCommentaires();
+    	$this->getArticle()->setNbCommentaires($nbCommentaires-1);
     }
 }
