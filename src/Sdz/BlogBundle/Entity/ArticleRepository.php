@@ -100,4 +100,14 @@ class ArticleRepository extends EntityRepository
     	return $qb->getQuery()
     			->getResult();
 	}
+	
+
+	public function getArticles()
+	{
+		$query = $this->createQueryBuilder('a')
+		->orderBy('a.date', 'DESC')
+		->getQuery();
+
+		return $query->getResult();
+	}
 }
