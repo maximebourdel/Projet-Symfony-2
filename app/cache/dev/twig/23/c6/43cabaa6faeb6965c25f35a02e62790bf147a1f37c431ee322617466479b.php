@@ -209,26 +209,39 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 \t</head>
   <body>
   
-  <nav role=\"navigation\" class=\"navbar navbar-inverse\">
-\t<div class=\"container-fluid\">
- \t\t<!-- Collect the nav links, forms, and other content for toggling -->
-\t\t<div id=\"bs-example-navbar-collapse-9\" class=\"collapse navbar-collapse\">
-\t\t\t<ul class=\"nav navbar-nav\">
-            <li id=\"home\"><a href=\"#\">Accueil</a></li>
-            <li id=\"article\"><a href=\"#\">Articles</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-</nav>
-  \t <div class=\"container-fluid\">
+\t  <nav role=\"navigation\" class=\"navbar navbar-inverse\">
+\t\t<div class=\"container-fluid\">
+\t \t\t<!-- Collect the nav links, forms, and other content for toggling -->
+\t\t\t<div id=\"bs-example-navbar-collapse-9\" class=\"collapse navbar-collapse\">
+\t\t\t\t<ul class=\"nav navbar-nav\">
+\t            \t<li id=\"home\"><a href=\"#\">Accueil</a></li>
+\t            \t<li id=\"article\"><a href=\"#\">Articles</a></li>
+\t            
+\t            \t<li id=\"search\">
+\t            \t\t<div class=\"input-group\">
+\t  \t\t\t\t\t\t<input type=\"text\" class=\"form-control\">
+\t  \t\t\t\t\t\t<span class=\"input-group-addon\">
+\t  \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-search\"></span> Rechercher
+\t  \t\t\t\t\t\t</span>
+\t\t\t\t\t\t</div>
+\t            \t</li>
+\t            
+\t            
+\t            
+\t            
+\t            
+\t          </ul>
+\t        </div><!-- /.navbar-collapse -->
+\t      </div><!-- /.container-fluid -->
+\t\t</nav>
+  \t
+  \t
     \t";
-        // line 41
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 44
-        echo "    \t</div>
-    </div>
-            
-    </div>
+        // line 59
+        echo "    \t
+    
   </body>
 </html>
 
@@ -242,10 +255,10 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         echo "SdzBlog";
     }
 
-    // line 41
+    // line 56
     public function block_body($context, array $blocks = array())
     {
-        // line 42
+        // line 57
         echo "\t    \t
 \t    ";
     }
@@ -262,6 +275,6 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 
     public function getDebugInfo()
     {
-        return array (  249 => 42,  246 => 41,  240 => 25,  228 => 44,  226 => 41,  207 => 25,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  21 => 1,  135 => 47,  130 => 45,  119 => 42,  116 => 41,  112 => 40,  107 => 37,  105 => 36,  96 => 30,  89 => 26,  83 => 23,  77 => 20,  70 => 18,  64 => 16,  58 => 14,  54 => 13,  49 => 11,  46 => 10,  42 => 8,  39 => 7,  32 => 4,  29 => 7,);
+        return array (  262 => 57,  259 => 56,  253 => 25,  243 => 59,  241 => 56,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  21 => 1,  222 => 155,  220 => 154,  207 => 25,  200 => 150,  195 => 149,  186 => 147,  64 => 27,  42 => 7,  39 => 6,  32 => 4,  29 => 7,);
     }
 }

@@ -12,24 +12,18 @@ use Sdz\BlogBundle\Entity\Commentaire;
 use Sdz\BlogBundle\Entity\ArticleCompetence;
 
 class BlogController extends Controller {
-	public function indexAction($page) {
-		// On ne sait pas combien de pages il y a
-		// Mais on sait qu'une page doit être supérieure ou égale à 1
-		if ($page < 1) {
-			// On déclenche une exception NotFoundHttpException
-			// Cela va afficher la page d'erreur 404 (on pourra personnaliser cette page plus tard d'ailleurs)
-			throw $this->createNotFoundException ( 'Page inexistante (page = ' . $page . ')' );
-		}
-		
-    	// Pour récupérer la liste de tous les articles : on utilise findAll()
+	public function indexAction( $page ) {
+		// Pour récupérer la liste de tous les articles : on utilise findAll()
     	$articles = $this->getDoctrine()
                      	->getManager()
                      	->getRepository('SdzBlogBundle:Article')
-                     	->getArticles();
+                     	->getArticles(3, $page);
     	
 		// Mais pour l'instant, on ne fait qu'appeler le template
 		return $this->render ( 'SdzBlogBundle:Blog:index.html.twig' , array(
-      		'articles' => $articles
+      			'articles' => $articles,
+				'page'       => $page,
+				'nombrePage' => ceil(count($articles)/3)
     	));
 	}
 	public function voirAction( Article $article ) {		

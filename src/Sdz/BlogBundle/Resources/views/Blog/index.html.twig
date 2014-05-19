@@ -1,187 +1,132 @@
-{% extends "SdzBlogBundle::layout.html.twig" %} {% block title %}{{
-parent() }} - Index{% endblock %} {% block body %}
+{% extends "SdzBlogBundle::layout.html.twig" %} 
+
+{% block title %}
+	{{parent() }} - Index
+{% endblock %} 
+{% block body %}
 
 
 
 
-<header role="banner" id="top"
-	class="navbar navbar-static-top bs-docs-nav">
+	
+	
+	
+	
+	</div>
 	<div class="container">
-		<div class="navbar-header">
-			<button data-target=".bs-navbar-collapse" data-toggle="collapse"
-				type="button" class="navbar-toggle">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
+		<div class="progress">
+			<div style="width: 25%" class="progress-bar progress-bar-info">
+				
+			</div>
+			<div style="width: 25%" class="progress-bar progress-bar-success">
+				
+			</div>
+			<div style="width: 25%" class="progress-bar progress-bar-danger">
+				
+			</div>
+			<div style="width: 25%" class="progress-bar progress-bar-warning">
+				
+			</div>
+	
 		</div>
-		<nav role="navigation"
-			class="collapse navbar-collapse bs-navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Accueil</a></li>
-				<li><a href="{{ path('sdzblog_ajouter') }}">Ajouter Article</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a
-					onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Expo']);"
-					href="http://expo.getbootstrap.com">Expo</a></li>
-				<li><a
-					onclick="_gaq.push(['_trackEvent', 'Navbar', 'Community links', 'Blog']);"
-					href="http://blog.getbootstrap.com">Blog</a></li>
-			</ul>
-		</nav>
 	</div>
-</header>
-
-<div id="content" class="bs-docs-header">
+	
+	<div class="container">OK, même s'il est pour l'instant un peu vide, mon
+		blog sera trop bien !</div>
+	</br>
 	<div class="container">
-
-		<h1>Maxime Bourdel</h1>
-
-		<div id="carbonads-container">
-			<div class="carbonad">
-				<div id="azcarbon"></div>
-				<script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
-			</div>
-		</div>
-
-	</div>
-</div>
-
-</div>
-<div class="container">
-	<div class="progress">
-		<div style="width: 25%" class="progress-bar progress-bar-info">
-			
-		</div>
-		<div style="width: 25%" class="progress-bar progress-bar-success">
-			
-		</div>
-		<div style="width: 25%" class="progress-bar progress-bar-danger">
-			
-		</div>
-		<div style="width: 25%" class="progress-bar progress-bar-warning">
-			
-		</div>
-
-	</div>
-</div>
-
-<div class="container">OK, même s'il est pour l'instant un peu vide, mon
-	blog sera trop bien !</div>
-</br>
-<div class="container">
-	<div class="col-sm-d">
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapseOne"> NUMBER 1 </a>
-					</h4>
+		<div class="col-sm-d">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseOne"> NUMBER 1 </a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse">
+						<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+							eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+							officia aute, non cupidatat skateboard dolor brunch. Food truck
+							quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+							aliqua put a bird on it squid single-origin coffee nulla assumenda
+							shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+							wes anderson cred nesciunt sapiente ea proident. Ad vegan
+							excepteur butcher vice lomo. Leggings occaecat craft beer
+							farm-to-table, raw denim aesthetic synth nesciunt you probably
+							haven't heard of them accusamus labore sustainable VHS.</div>
+					</div>
 				</div>
-				<div id="collapseOne" class="panel-collapse collapse">
-					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
-						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-						officia aute, non cupidatat skateboard dolor brunch. Food truck
-						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-						aliqua put a bird on it squid single-origin coffee nulla assumenda
-						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-						wes anderson cred nesciunt sapiente ea proident. Ad vegan
-						excepteur butcher vice lomo. Leggings occaecat craft beer
-						farm-to-table, raw denim aesthetic synth nesciunt you probably
-						haven't heard of them accusamus labore sustainable VHS.</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseTwo"> NUMBER 2 </a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+							eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+							officia aute, non cupidatat skateboard dolor brunch. Food truck
+							quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+							aliqua put a bird on it squid single-origin coffee nulla assumenda
+							shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+							wes anderson cred nesciunt sapiente ea proident. Ad vegan
+							excepteur butcher vice lomo. Leggings occaecat craft beer
+							farm-to-table, raw denim aesthetic synth nesciunt you probably
+							haven't heard of them accusamus labore sustainable VHS.</div>
+					</div>
 				</div>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapseTwo"> NUMBER 2 </a>
-					</h4>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseThree"> NUMBER 3 </a>
+						</h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse">
+						<div class="panel-body">Anim pariatur cliche reprehenderit, enim
+							eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+							officia aute, non cupidatat skateboard dolor brunch. Food truck
+							quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+							aliqua put a bird on it squid single-origin coffee nulla assumenda
+							shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+							wes anderson cred nesciunt sapiente ea proident. Ad vegan
+							excepteur butcher vice lomo. Leggings occaecat craft beer
+							farm-to-table, raw denim aesthetic synth nesciunt you probably
+							haven't heard of them accusamus labore sustainable VHS.</div>
+					</div>
 				</div>
-				<div id="collapseTwo" class="panel-collapse collapse">
-					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
-						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-						officia aute, non cupidatat skateboard dolor brunch. Food truck
-						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-						aliqua put a bird on it squid single-origin coffee nulla assumenda
-						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-						wes anderson cred nesciunt sapiente ea proident. Ad vegan
-						excepteur butcher vice lomo. Leggings occaecat craft beer
-						farm-to-table, raw denim aesthetic synth nesciunt you probably
-						haven't heard of them accusamus labore sustainable VHS.</div>
-				</div>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapseThree"> NUMBER 3 </a>
-					</h4>
-				</div>
-				<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body">Anim pariatur cliche reprehenderit, enim
-						eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-						officia aute, non cupidatat skateboard dolor brunch. Food truck
-						quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-						aliqua put a bird on it squid single-origin coffee nulla assumenda
-						shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-						wes anderson cred nesciunt sapiente ea proident. Ad vegan
-						excepteur butcher vice lomo. Leggings occaecat craft beer
-						farm-to-table, raw denim aesthetic synth nesciunt you probably
-						haven't heard of them accusamus labore sustainable VHS.</div>
-				</div>
-			</div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapseFour"> Collapsible Group Item #4 </a>
-					</h4>
-				</div>
-				<div id="collapseFour" class="panel-collapse collapse">
-					<div class="panel-body">dfsdjfsjfjslfskfsfsm;,dsfm,smfsm
-						nbfdfkjsbfsnfsf;:vn:c,;:vxvnfdgjl:dgjnkdjk
-						ngdlfgjndl:v,v;nxckjlwsf xbgkh:lvkd!dffcjml,xd
-						nffdsljfsf,lnvvc,!x,kdlvfkc!f,v fdn:c</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseFour"> NUMBER 3 </a>
+						</h4>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse">
+						<div class="panel-body">dfsdjfsjfjslfskfsfsm;,dsfm,smfsm
+							nbfdfkjsbfsnfsf;:vn:c,;:vxvnfdgjl:dgjnkdjk
+							ngdlfgjndl:v,v;nxckjlwsf xbgkh:lvkd!dffcjml,xd
+							nffdsljfsf,lnvvc,!x,kdlvfkc!f,v fdn:c</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-
-<div class="container">
-<div data-ride="carousel" class="carousel slide" id="carousel-example-generic">
-      <ol class="carousel-indicators">
-        <li class="active" data-slide-to="0" data-target="#carousel-example-generic"></li>
-        <li data-slide-to="1" data-target="#carousel-example-generic" class=""></li>
-        <li data-slide-to="2" data-target="#carousel-example-generic" class=""></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img alt="First slide" data-src="holder.js/900x500/auto/#777:#555/text:First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
-        </div>
-        <div class="item">
-          <img alt="Second slide" data-src="holder.js/900x500/auto/#666:#444/text:Second slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==">
-        </div>
-        <div class="item">
-          <img alt="Third slide" data-src="holder.js/900x500/auto/#555:#333/text:Third slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzU1NSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojMzMzO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+VGhpcmQgc2xpZGU8L3RleHQ+PC9zdmc+">
-        </div>
-      </div>
-      <a data-slide="prev" href="#carousel-example-generic" class="left carousel-control">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a data-slide="next" href="#carousel-example-generic" class="right carousel-control">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div>
-</div>
-
-
-
-
+	<div class="container">
+    	<ul class="pagination">
+    		{# On affiche pas le retour page-1 si on est à la premiere page #}
+    		{% if page > 1 %}<li><a href="{{ path('sdzblog_accueil', {'page': page-1}) }}">&laquo;</a></li>{% endif %} 
+	      	{# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+	      	{% for p in range(1, nombrePage) %}
+	        	<li{% if p == page %} class="active"{% endif %}>
+	          		<a id="page{{ p }}" href="{{ path('sdzblog_accueil', {'page': p}) }}">{{ p }}</a>
+	        	</li>
+	      	{% endfor %}
+	      	{# On affiche pas le retour page+1 si on est à la dernire page #}
+	      	{% if page < nombrePage %}<li><a href="{{ path('sdzblog_accueil', {'page': page+1}) }}">&raquo;</a></li>{% endif %} 
+    	</ul>
+  	</div>
 
 {% endblock %}
