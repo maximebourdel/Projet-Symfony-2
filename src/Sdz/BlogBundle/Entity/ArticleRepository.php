@@ -104,9 +104,17 @@ class ArticleRepository extends EntityRepository
 
 	public function getArticles()
 	{
-		$query = $this->createQueryBuilder('a')
-		->orderBy('a.date', 'DESC')
-		->getQuery();
+		$query = $this	->createQueryBuilder('a')
+						
+						// On joint sur l'attribut image
+						->leftJoin('a.image', 'i')
+						->addSelect('i')
+						// On joint sur l'attribut categories
+						->leftJoin('a.categories', 'c')
+						->addSelect('c')
+						
+						->orderBy('a.date', 'DESC')
+						->getQuery();
 
 		return $query->getResult();
 	}

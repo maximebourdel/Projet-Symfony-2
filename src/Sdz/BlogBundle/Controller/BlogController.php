@@ -25,7 +25,7 @@ class BlogController extends Controller {
     	$articles = $this->getDoctrine()
                      	->getManager()
                      	->getRepository('SdzBlogBundle:Article')
-                     	->findAll();
+                     	->getArticles();
     	
 		// Mais pour l'instant, on ne fait qu'appeler le template
 		return $this->render ( 'SdzBlogBundle:Blog:index.html.twig' , array(
