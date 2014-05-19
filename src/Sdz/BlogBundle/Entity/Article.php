@@ -3,7 +3,7 @@
 namespace Sdz\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Article
  *
@@ -78,6 +78,13 @@ class Article
     * @ORM\Column(name="nbCommentaires", type="integer")
     */
     private $nbCommentaires;
+    
+    
+    /**
+     * @Gedmo\Slug(fields={"titre"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
     
     // Et modifions le constructeur pour mettre cet attribut publication à true par défaut
     public function __construct()
@@ -272,13 +279,23 @@ class Article
     }
 
     /**
-     * Get publication
+     * Get nbCommentaires
      *
-     * @return boolean 
+     * @return integer 
      */
-    public function getPublication()
+    public function getNbCommentaires()
     {
-        return $this->publication;
+        return $this->nbCommentaires;
+    }
+    
+    /**
+     * @param boolean $nbCommentaires
+     * @return Article
+     */
+    public function setNbCommentaires($nbCommentaires)
+    {
+    	$this->nbCommentaires = $nbCommentaires;
+    	return $this->nbCommentaires;
     }
     
     /**
@@ -287,5 +304,61 @@ class Article
     public function updateDate()
     {
     	$this->setDateEdition(new \Datetime());
+    }
+
+    /**
+     * Get publication
+     *
+     * @return boolean 
+     */
+    public function getPublication()
+    {
+        return $this->publication;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Article
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Add categories
+     *
+     * @param \Sdz\BlogBundle\Entity\Categorie $categories
+     * @return Article
+     */
+    public function addCategory(\Sdz\BlogBundle\Entity\Categorie $categories)
+    {
+        $this->categories[] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Remove categories
+     *
+     * @param \Sdz\BlogBundle\Entity\Categorie $categories
+     */
+    public function removeCategory(\Sdz\BlogBundle\Entity\Categorie $categories)
+    {
+        $this->categories->removeElement($categories);
     }
 }

@@ -209,22 +209,29 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 \t</head>
   <body>
   
-  \t
-  
-
-    ";
-        // line 32
+  <nav role=\"navigation\" class=\"navbar navbar-inverse\">
+\t<div class=\"container-fluid\">
+ \t\t<!-- Collect the nav links, forms, and other content for toggling -->
+\t\t<div id=\"bs-example-navbar-collapse-9\" class=\"collapse navbar-collapse\">
+\t\t\t<ul class=\"nav navbar-nav\">
+            <li id=\"home\"><a href=\"#\">Accueil</a></li>
+            <li id=\"article\"><a href=\"#\">Articles</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+</nav>
+  \t <div class=\"container-fluid\">
+    \t";
+        // line 41
         $this->displayBlock('body', $context, $blocks);
-        // line 34
-        echo "
+        // line 44
+        echo "    \t</div>
+    </div>
+            
+    </div>
   </body>
 </html>
 
-<script>
-\t\$(function() {
-\t\t\$( \"#accordion\" ).accordion();
-\t});
-</script>
 
 ";
     }
@@ -235,11 +242,12 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         echo "SdzBlog";
     }
 
-    // line 32
+    // line 41
     public function block_body($context, array $blocks = array())
     {
-        // line 33
-        echo "    ";
+        // line 42
+        echo "\t    \t
+\t    ";
     }
 
     public function getTemplateName()
@@ -254,6 +262,6 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 
     public function getDebugInfo()
     {
-        return array (  242 => 33,  239 => 32,  233 => 25,  219 => 34,  217 => 32,  207 => 25,  201 => 21,  117 => 16,  100 => 13,  95 => 11,  33 => 9,  21 => 1,  157 => 42,  148 => 41,  144 => 40,  141 => 39,  136 => 36,  125 => 34,  121 => 19,  116 => 30,  114 => 15,  110 => 27,  101 => 26,  97 => 25,  89 => 20,  84 => 18,  79 => 16,  73 => 13,  66 => 11,  61 => 9,  58 => 8,  51 => 7,  47 => 6,  44 => 5,  40 => 3,  32 => 2,  29 => 7,);
+        return array (  249 => 42,  246 => 41,  240 => 25,  228 => 44,  226 => 41,  207 => 25,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  21 => 1,  135 => 47,  130 => 45,  119 => 42,  116 => 41,  112 => 40,  107 => 37,  105 => 36,  96 => 30,  89 => 26,  83 => 23,  77 => 20,  70 => 18,  64 => 16,  58 => 14,  54 => 13,  49 => 11,  46 => 10,  42 => 8,  39 => 7,  32 => 4,  29 => 7,);
     }
 }
