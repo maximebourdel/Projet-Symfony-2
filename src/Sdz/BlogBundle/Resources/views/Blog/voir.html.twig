@@ -5,7 +5,7 @@
 {% endblock %} 
 
 {% block body %}
-	<script> $('#home').addClass('active')</script>
+<div class="container-fluid">
 	<h2>
 		{# On vérifie qu'une image soit bien associée à l'article #} 
 		{% if article.image is not null %} 
@@ -45,5 +45,5 @@
 			</ul>
 		</div>
 	{% endif %} 
-
+</div>
 {% endblock %}

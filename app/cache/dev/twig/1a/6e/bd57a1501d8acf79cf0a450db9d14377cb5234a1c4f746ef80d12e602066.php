@@ -39,7 +39,7 @@ class __TwigTemplate_1a6ebd57a1501d8acf79cf0a450db9d14377cb5234a1c4f746ef80d12e6
     public function block_body($context, array $blocks = array())
     {
         // line 8
-        echo "\t<script> \$('#home').addClass('active')</script>
+        echo "<div class=\"container-fluid\">
 \t<h2>
 \t\t";
         // line 10
@@ -133,7 +133,7 @@ class __TwigTemplate_1a6ebd57a1501d8acf79cf0a450db9d14377cb5234a1c4f746ef80d12e6
         }
         // line 47
         echo " 
-
+</div>
 ";
     }
 

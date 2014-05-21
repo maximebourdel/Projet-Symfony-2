@@ -200,12 +200,12 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         // line 21
         echo "
 \t\t
-\t\t
 \t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
 \t\t<title>";
-        // line 25
+        // line 24
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+\t\t
 \t</head>
   <body>
   
@@ -214,9 +214,11 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 \t \t\t<!-- Collect the nav links, forms, and other content for toggling -->
 \t\t\t<div id=\"bs-example-navbar-collapse-9\" class=\"collapse navbar-collapse\">
 \t\t\t\t<ul class=\"nav navbar-nav\">
-\t            \t<li id=\"home\"><a href=\"#\">Accueil</a></li>
+\t            \t<li id=\"home\"><a href=\"";
+        // line 34
+        echo $this->env->getExtension('routing')->getPath("sdzblog_accueil", array("page" => 1));
+        echo "\">Accueil</a></li>
 \t            \t<li id=\"article\"><a href=\"#\">Articles</a></li>
-\t            
 \t            \t<li id=\"search\">
 \t            \t\t<div class=\"input-group\">
 \t  \t\t\t\t\t\t<input type=\"text\" class=\"form-control\">
@@ -225,23 +227,21 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 \t  \t\t\t\t\t\t</span>
 \t\t\t\t\t\t</div>
 \t            \t</li>
-\t            
-\t            
-\t            
-\t            
-\t            
-\t          </ul>
+\t          \t</ul>
 \t        </div><!-- /.navbar-collapse -->
-\t      </div><!-- /.container-fluid -->
-\t\t</nav>
+\t \t</div><!-- /.container-fluid -->
+\t</nav>
   \t
   \t
-    \t";
-        // line 56
+    ";
+        // line 50
         $this->displayBlock('body', $context, $blocks);
-        // line 59
-        echo "    \t
-    
+        // line 53
+        echo "    
+    <div class=\"container\">
+    \t© Maxime Bourdel 2013 Tous droits réservés
+    </div>
+  
   </body>
 </html>
 
@@ -249,18 +249,18 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 ";
     }
 
-    // line 25
+    // line 24
     public function block_title($context, array $blocks = array())
     {
-        echo "SdzBlog";
+        echo "myBlog";
     }
 
-    // line 56
+    // line 50
     public function block_body($context, array $blocks = array())
     {
-        // line 57
+        // line 51
         echo "\t    \t
-\t    ";
+    ";
     }
 
     public function getTemplateName()
@@ -275,6 +275,6 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 
     public function getDebugInfo()
     {
-        return array (  262 => 57,  259 => 56,  253 => 25,  243 => 59,  241 => 56,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  21 => 1,  222 => 155,  220 => 154,  207 => 25,  200 => 150,  195 => 149,  186 => 147,  64 => 27,  42 => 7,  39 => 6,  32 => 4,  29 => 7,);
+        return array (  262 => 51,  259 => 50,  253 => 24,  240 => 53,  238 => 50,  219 => 34,  206 => 24,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  29 => 7,  21 => 1,);
     }
 }

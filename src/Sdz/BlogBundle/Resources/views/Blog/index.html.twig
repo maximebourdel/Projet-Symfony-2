@@ -3,37 +3,9 @@
 {% block title %}
 	{{parent() }} - Index
 {% endblock %} 
+
 {% block body %}
-
-
-
-
 	
-	
-	
-	
-	</div>
-	<div class="container">
-		<div class="progress">
-			<div style="width: 25%" class="progress-bar progress-bar-info">
-				
-			</div>
-			<div style="width: 25%" class="progress-bar progress-bar-success">
-				
-			</div>
-			<div style="width: 25%" class="progress-bar progress-bar-danger">
-				
-			</div>
-			<div style="width: 25%" class="progress-bar progress-bar-warning">
-				
-			</div>
-	
-		</div>
-	</div>
-	
-	<div class="container">OK, même s'il est pour l'instant un peu vide, mon
-		blog sera trop bien !</div>
-	</br>
 	<div class="container">
 		<div class="col-sm-d">
 			<div class="panel-group" id="accordion">
@@ -41,27 +13,18 @@
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion"
-								href="#collapseOne"> NUMBER 1 </a>
+								href="#collapseOne"> Deroule moi </a>
 						</h4>
 					</div>
 					<div id="collapseOne" class="panel-collapse collapse">
-						<div class="panel-body">Anim pariatur cliche reprehenderit, enim
-							eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
-							officia aute, non cupidatat skateboard dolor brunch. Food truck
-							quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-							aliqua put a bird on it squid single-origin coffee nulla assumenda
-							shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-							wes anderson cred nesciunt sapiente ea proident. Ad vegan
-							excepteur butcher vice lomo. Leggings occaecat craft beer
-							farm-to-table, raw denim aesthetic synth nesciunt you probably
-							haven't heard of them accusamus labore sustainable VHS.</div>
+						<div class="panel-body">Je suis vide</div>
 					</div>
 				</div>
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion"
-								href="#collapseTwo"> NUMBER 2 </a>
+								href="#collapseTwo"> Lorem </a>
 						</h4>
 					</div>
 					<div id="collapseTwo" class="panel-collapse collapse">
@@ -81,7 +44,7 @@
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion"
-								href="#collapseThree"> NUMBER 3 </a>
+								href="#collapseThree"> ipsum </a>
 						</h4>
 					</div>
 					<div id="collapseThree" class="panel-collapse collapse">
@@ -97,23 +60,26 @@
 							haven't heard of them accusamus labore sustainable VHS.</div>
 					</div>
 				</div>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion"
-								href="#collapseFour"> NUMBER 3 </a>
-						</h4>
-					</div>
-					<div id="collapseFour" class="panel-collapse collapse">
-						<div class="panel-body">dfsdjfsjfjslfskfsfsm;,dsfm,smfsm
-							nbfdfkjsbfsnfsf;:vn:c,;:vxvnfdgjl:dgjnkdjk
-							ngdlfgjndl:v,v;nxckjlwsf xbgkh:lvkd!dffcjml,xd
-							nffdsljfsf,lnvvc,!x,kdlvfkc!f,v fdn:c</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
+	
+	
+	<ul>
+  		{% for article in articles %}
+    	{# On inclut la vue à chaque itération dans la boucle #}
+    		<div class="container">
+    			{% include "SdzBlogBundle:Blog:article.html.twig" with {'accueil': true} %}
+    		</div>
+    		<hr />
+  		{% else %}
+    		<p>Pas (encore !) d'articles</p>
+  		{% endfor %}
+	</ul>
+	
+	
+	
+	
 	<div class="container">
     	<ul class="pagination">
     		{# On affiche pas le retour page-1 si on est à la premiere page #}
@@ -128,5 +94,7 @@
 	      	{% if page < nombrePage %}<li><a href="{{ path('sdzblog_accueil', {'page': page+1}) }}">&raquo;</a></li>{% endif %} 
     	</ul>
   	</div>
+  	
 
+<script> $('#home').addClass('active')</script>
 {% endblock %}
