@@ -3,7 +3,7 @@ Projet personnel Maxime Bourdel
 
 ----------------------------------
 
-Ceci n' est pour l'instant qu'un test dont le but principal est d'améliorer mon CV et pouvoir y ajouter cette la compétence :
+Ceci n' est pour l'instant qu'un test dont le but principal est d'améliorer mon CV et pouvoir y ajouter cette compétence :
 
 ``Maitrîse de Symfony 2.0``
 
