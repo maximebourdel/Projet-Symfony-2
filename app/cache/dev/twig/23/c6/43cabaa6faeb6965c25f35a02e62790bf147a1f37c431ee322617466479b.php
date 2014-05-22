@@ -218,12 +218,15 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         // line 34
         echo $this->env->getExtension('routing')->getPath("sdzblog_accueil", array("page" => 1));
         echo "\">Accueil</a></li>
-\t            \t<li id=\"article\"><a href=\"#\">Articles</a></li>
+\t            \t<li id=\"Exprimez-vous\"><a href=\"";
+        // line 35
+        echo $this->env->getExtension('routing')->getPath("sdzblog_ajouter");
+        echo "\">Exprimez-vous</a></li>
 \t            \t<li id=\"search\">
 \t            \t\t<div class=\"input-group\">
 \t  \t\t\t\t\t\t<input type=\"text\" class=\"form-control\">
 \t  \t\t\t\t\t\t<span class=\"input-group-addon\">
-\t  \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-search\"></span> Rechercher
+\t  \t\t\t\t\t\t\t<span class=\"glyphicon glyphicon-link\"></span> Rechercher
 \t  \t\t\t\t\t\t</span>
 \t\t\t\t\t\t</div>
 \t            \t</li>
@@ -239,7 +242,7 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
         // line 53
         echo "    
     <div class=\"container\">
-    \t© Maxime Bourdel 2013 Tous droits réservés
+    \t© Maxime Bourdel 2014 Tous droits réservés
     </div>
   
   </body>
@@ -275,6 +278,6 @@ class __TwigTemplate_23c643cabaa6faeb6965c25f35a02e62790bf147a1f37c431ee32261746
 
     public function getDebugInfo()
     {
-        return array (  262 => 51,  259 => 50,  253 => 24,  240 => 53,  238 => 50,  219 => 34,  206 => 24,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  29 => 7,  21 => 1,);
+        return array (  265 => 51,  262 => 50,  256 => 24,  243 => 53,  241 => 50,  223 => 35,  219 => 34,  206 => 24,  201 => 21,  121 => 19,  117 => 16,  114 => 15,  100 => 13,  95 => 11,  33 => 9,  29 => 7,  21 => 1,);
     }
 }

@@ -25,63 +25,41 @@ class __TwigTemplate_58960f76d50276e3982d6a6967bd069d202333379b42a03849b2c5fd226
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 1
     public function block_title($context, array $blocks = array())
     {
+        // line 2
         $this->displayParentBlock("title", $context, $blocks);
         echo " - Index";
     }
 
-    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 6
-        echo "    
-    
+        // line 3
+        echo "<div class=\"container\">
 
-   
+\t<h3>Formulaire d'article</h3>
 
-    <div class=\"container\">
+\t<div class=\"well\">
+\t\t<form method=\"post\"  ";
+        // line 8
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+        echo ">
+\t\t\t";
+        // line 9
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo " <input type=\"submit\" class=\"btn btn-primary\" />
+\t\t</form>
+\t</div>
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class=\"hero-unit\">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a href=\"#\" class=\"btn btn-primary btn-large\">Learn more »</a></p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class=\"row\">
-        <div class=\"span4\">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class=\"btn\" href=\"#\">View details »</a></p>
-        </div>
-        <div class=\"span4\">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class=\"btn\" href=\"#\">View details »</a></p>
-       </div>
-        <div class=\"span4\">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class=\"btn\" href=\"#\">View details »</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>© Company 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
+</div>
+<!-- /container -->
 
 
-  
 
 
-    
+
+<script> \$('#Exprimez-vous').addClass('active')</script>
 ";
     }
 
@@ -97,6 +75,6 @@ class __TwigTemplate_58960f76d50276e3982d6a6967bd069d202333379b42a03849b2c5fd226
 
     public function getDebugInfo()
     {
-        return array (  39 => 6,  36 => 5,  29 => 3,);
+        return array (  50 => 9,  46 => 8,  39 => 3,  32 => 2,  29 => 1,);
     }
 }
