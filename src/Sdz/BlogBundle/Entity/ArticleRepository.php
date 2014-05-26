@@ -14,6 +14,15 @@ use Doctrine\ORM\Query\AST\WhereClause;
  */
 class ArticleRepository extends EntityRepository
 {
+	public function getSelectList()
+	{
+		$qb = $this->createQueryBuilder('a')
+		->where('a.publication = 1'); // On filtre sur l'attribut publication
+	
+		// Et on retourne simplement le QueryBuilder, et non la Query, attention
+		return $qb;
+	}
+	
 	// Depuis le repository d'Article
 	public function getArticleAvecCommentaires()
 	{
