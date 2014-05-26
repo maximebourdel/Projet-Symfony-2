@@ -6,10 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Httpfoundation\Response;
 
 // Attention à bien ajouter ce use en début de contrôleur
+//Entités
 use Sdz\BlogBundle\Entity\Article;
 use Sdz\BlogBundle\Entity\Image;
 use Sdz\BlogBundle\Entity\Commentaire;
 use Sdz\BlogBundle\Entity\ArticleCompetence;
+//Formulaire
+use Sdz\BlogBundle\Form\ArticleType;
 
 class BlogController extends Controller {
 	public function indexAction( $page ) {
@@ -48,24 +51,14 @@ class BlogController extends Controller {
 		$article = new Article();
 		
 		$article->setAuteur("moi, qui veux-tu d'autre?");
-		// On crée le FormBuilder grâce à la méthode du contrôleur
-		$formBuilder = $this->createFormBuilder($article);
 		
-		// On ajoute les champs de l'entité que l'on veut à notre formulaire
-		$formBuilder
-			->add('date',        'date' )
-			->add('titre',       'text')
-			->add('contenu',     'textarea')
-			->add('auteur',      'text')
-			->add('publication', 'checkbox', array('required' => false));
-		// Pour l'instant, pas de commentaires, catégories, etc., on les gérera plus tard
-
-
+		//on utilise le classe ArticleType et non plus le formBuilder
+		$form = $this->createForm(new ArticleType, $article);
+		
+		
 		// On récupère la requête
 		$request = $this->get('request');
 		
-		// À partir du formBuilder, on génère le formulaire
-		$form = $formBuilder->getForm();
 		
 		
 		// On vérifie qu'elle est de type POST
