@@ -25,41 +25,61 @@ class __TwigTemplate_58960f76d50276e3982d6a6967bd069d202333379b42a03849b2c5fd226
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 1
+    // line 3
     public function block_title($context, array $blocks = array())
     {
-        // line 2
+        // line 4
         $this->displayParentBlock("title", $context, $blocks);
-        echo " - Index";
+        echo " - Index
+";
     }
 
+    // line 7
     public function block_body($context, array $blocks = array())
     {
-        // line 3
-        echo "<div class=\"container\">
-
-\t<h3>Formulaire d'article</h3>
-
-\t<div class=\"well\">
-\t\t<form method=\"post\"  ";
         // line 8
+        echo "\t<div class=\"container\">
+\t
+\t\t<h3>Formulaire d'article</h3>
+\t
+\t\t<div class=\"well\">
+\t\t\t<form method=\"post\"  ";
+        // line 13
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo ">
-\t\t\t";
-        // line 9
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
-        echo " <input type=\"submit\" class=\"btn btn-primary\" />
-\t\t</form>
+\t\t\t\t
+\t\t\t\t
+\t\t\t    ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu"), 'label', array("label" => "Contenu de l'article"));
+        echo "
+\t\t\t\t</br>
+\t\t\t\t";
+        // line 18
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu"), 'errors');
+        echo "
+\t\t\t\t";
+        // line 19
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu"), 'widget');
+        echo "
+\t\t\t    
+\t\t\t    </br>
+\t\t\t\t
+\t\t\t    ";
+        // line 23
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
+        echo "
+\t\t\t\t<input type=\"submit\" class=\"btn btn-primary\" />
+\t\t\t
+\t\t\t</form>
+\t\t</div>
+\t
 \t</div>
-
-</div>
-<!-- /container -->
-
+\t
+\t
 
 
-
-
-<script> \$('#Exprimez-vous').addClass('active')</script>
+\t<script> \$('#Exprimez-vous').addClass('active')</script>
 ";
     }
 
@@ -75,6 +95,6 @@ class __TwigTemplate_58960f76d50276e3982d6a6967bd069d202333379b42a03849b2c5fd226
 
     public function getDebugInfo()
     {
-        return array (  50 => 9,  46 => 8,  39 => 3,  32 => 2,  29 => 1,);
+        return array (  70 => 23,  63 => 19,  59 => 18,  54 => 16,  48 => 13,  41 => 8,  38 => 7,  32 => 4,  29 => 3,);
     }
 }

@@ -1,21 +1,35 @@
-{% extends "SdzBlogBundle::layout.html.twig" %} {% block title %}{{
-parent() }} - Index{% endblock %} {% block body %}
-<div class="container">
+{% extends "SdzBlogBundle::layout.html.twig" %} 
 
-	<h3>Formulaire d'article</h3>
+{% block title %}{{
+	parent() }} - Index
+{% endblock %} 
 
-	<div class="well">
-		<form method="post"  {{ form_enctype(form) }}>
-			{{ form_widget(form) }} <input type="submit" class="btn btn-primary" />
-		</form>
+{% block body %}
+	<div class="container">
+	
+		<h3>Formulaire d'article</h3>
+	
+		<div class="well">
+			<form method="post"  {{ form_enctype(form) }}>
+				
+				
+			    {{ form_label(form.contenu, "Contenu de l'article") }}
+				</br>
+				{{ form_errors(form.contenu) }}
+				{{ form_widget(form.contenu) }}
+			    
+			    </br>
+				
+			    {{ form_rest(form) }}
+				<input type="submit" class="btn btn-primary" />
+			
+			</form>
+		</div>
+	
 	</div>
-
-</div>
-<!-- /container -->
-
+	
+	
 
 
-
-
-<script> $('#Exprimez-vous').addClass('active')</script>
+	<script> $('#Exprimez-vous').addClass('active')</script>
 {% endblock %}

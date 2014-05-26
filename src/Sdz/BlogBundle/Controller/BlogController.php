@@ -47,6 +47,7 @@ class BlogController extends Controller {
 		// On crée un objet Article
 		$article = new Article();
 		
+		$article->setAuteur("moi, qui veux-tu d'autre?");
 		// On crée le FormBuilder grâce à la méthode du contrôleur
 		$formBuilder = $this->createFormBuilder($article);
 		
