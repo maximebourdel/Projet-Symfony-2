@@ -54,7 +54,7 @@ class BlogController extends Controller {
 		$article->setAuteur("moi, qui veux-tu d'autre?");
 		
 		//on utilise le classe ArticleType et non plus le formBuilder
-		$form = $this->createForm(new ArticleEditType, $article);
+		$form = $this->createForm(new ArticleType, $article);
 		
 		
 		// On récupère la requête
