@@ -13,6 +13,7 @@ use Sdz\BlogBundle\Entity\Commentaire;
 use Sdz\BlogBundle\Entity\ArticleCompetence;
 //Formulaire
 use Sdz\BlogBundle\Form\ArticleType;
+use Sdz\BlogBundle\Form\ArticleEditType;
 
 class BlogController extends Controller {
 	public function indexAction( $page ) {
@@ -53,7 +54,7 @@ class BlogController extends Controller {
 		$article->setAuteur("moi, qui veux-tu d'autre?");
 		
 		//on utilise le classe ArticleType et non plus le formBuilder
-		$form = $this->createForm(new ArticleType, $article);
+		$form = $this->createForm(new ArticleEditType, $article);
 		
 		
 		// On récupère la requête
