@@ -51,12 +51,12 @@ class __TwigTemplate_1a6ebd57a1501d8acf79cf0a450db9d14377cb5234a1c4f746ef80d12e6
 \t\t\t<img 
 \t\t\t\tsrc=\"";
             // line 13
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "image"), "url"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl($this->getAttribute($this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "image"), "webPath")), "html", null, true);
             echo "\"
-\t\t\t\talt=\"";
+  \t\t\t\talt=\"";
             // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "image"), "alt"), "html", null, true);
-            echo "\" 
+            echo "\"
 \t\t\t/> 
 \t\t";
         }

@@ -64,10 +64,10 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'url', 'alt', 'file');
+            return array('__isInitialized__', 'id', 'url', 'alt', 'file', 'tempFilename');
         }
 
-        return array('__isInitialized__', 'id', 'url', 'alt', 'file');
+        return array('__isInitialized__', 'id', 'url', 'alt', 'file', 'tempFilename');
     }
 
     /**
@@ -235,7 +235,18 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
-    public function setFile($file)
+    public function getFile()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFile', array());
+
+        return parent::getFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFile(\Symfony\Component\HttpFoundation\File\UploadedFile $file)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFile', array($file));
@@ -246,12 +257,12 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
-    public function getFile()
+    public function preUpload()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFile', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'preUpload', array());
 
-        return parent::getFile();
+        return parent::preUpload();
     }
 
     /**
@@ -268,12 +279,45 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
     /**
      * {@inheritDoc}
      */
+    public function preRemoveUpload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'preRemoveUpload', array());
+
+        return parent::preRemoveUpload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeUpload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUpload', array());
+
+        return parent::removeUpload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUploadDir()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUploadDir', array());
 
         return parent::getUploadDir();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getWebPath()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getWebPath', array());
+
+        return parent::getWebPath();
     }
 
 }

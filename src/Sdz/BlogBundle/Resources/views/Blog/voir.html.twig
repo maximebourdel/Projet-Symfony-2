@@ -10,8 +10,8 @@
 		{# On vérifie qu'une image soit bien associée à l'article #} 
 		{% if article.image is not null %} 
 			<img 
-				src="{{ article.image.url }}"
-				alt="{{ article.image.alt }}" 
+				src="{{ asset(article.image.webPath) }}"
+  				alt="{{ article.image.alt }}"
 			/> 
 		{% endif %} {{ article.titre }}
 	</h2>
