@@ -12,13 +12,12 @@ class ImageType extends AbstractType
      * @param FormBuilderInterface $builder
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('url', 'text')
-            ->add('alt', 'text')
-        ;
-    }
+	  public function buildForm(FormBuilderInterface $builder, array $options)
+	  {
+	  	$builder
+	    	->add('file', 'file')
+		;
+	  }
     
     /**
      * @param OptionsResolverInterface $resolver

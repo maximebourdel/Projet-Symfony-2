@@ -64,10 +64,10 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'url', 'alt');
+            return array('__isInitialized__', 'id', 'url', 'alt', 'file');
         }
 
-        return array('__isInitialized__', 'id', 'url', 'alt');
+        return array('__isInitialized__', 'id', 'url', 'alt', 'file');
     }
 
     /**
@@ -230,6 +230,50 @@ class Image extends \Sdz\BlogBundle\Entity\Image implements \Doctrine\ORM\Proxy\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAlt', array());
 
         return parent::getAlt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFile($file)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFile', array($file));
+
+        return parent::setFile($file);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFile()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFile', array());
+
+        return parent::getFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function upload()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'upload', array());
+
+        return parent::upload();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUploadDir()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUploadDir', array());
+
+        return parent::getUploadDir();
     }
 
 }
