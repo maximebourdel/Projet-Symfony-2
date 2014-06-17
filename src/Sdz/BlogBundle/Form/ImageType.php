@@ -34,6 +34,6 @@ class ImageType extends AbstractType
      */
     public function getName()
     {
-        return 'sdz_blogbundle_image';
+        return 'sdz_blogbundle_imageType';
     }
 }

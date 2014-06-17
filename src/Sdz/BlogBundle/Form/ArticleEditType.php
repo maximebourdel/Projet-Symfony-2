@@ -18,24 +18,13 @@ class ArticleEditType extends ArticleType
     	parent::buildForm($builder, $options);
     	
     	$builder->remove('date');
-    	$builder->remove('alt');
     }
     
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Sdz\BlogBundle\Entity\Article'
-        ));
-    }
-
     /**
      * @return string
      */
     public function getName()
     {
-        return 'sdz_blogbundle_articleType';
+        return 'sdz_blogbundle_articleedittype';
     }
 }
