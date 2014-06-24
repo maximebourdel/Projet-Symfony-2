@@ -4,6 +4,8 @@ namespace Sdz\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Sdz\BlogBundle\Validator\AntiFlood;
+
 /**
  * Commentaire
  *
@@ -46,6 +48,7 @@ class Commentaire
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @AntiFlood()
      */
     private $date;
 

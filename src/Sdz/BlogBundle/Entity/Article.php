@@ -7,12 +7,16 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
+// On rajoute ce use pour la contrainte :
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * Article
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Sdz\BlogBundle\Entity\ArticleRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity(fields="titre", message="Un article existe déjà avec ce titre.")
  */
 class Article
 {
@@ -51,8 +55,8 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=255)
-     * @Assert\Length(min="10")
+     * @ORM\Column(name="titre", type="string", length=255, unique=true)
+     * @Assert\Length(min="10") 
      */
     private $titre;
 
