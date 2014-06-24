@@ -14,7 +14,7 @@ class Articles implements FixtureInterface
   {
     // Liste des noms de catégorie à ajouter
   	$id = array('1', '2', '3', '4');
-    $titre = array('titre1', 'titre2', 'titre3', 'titre4');
+    $titre = array('titreDeTaille10 1', 'titreDeTaille10 2', 'titreDeTaille10 3', 'titreDeTaille10 4');
     $auteur = array('bourdel', 'bourdel2', 'bourdel3', 'bourdel4');
     $contenu = array(
     		'Quidem iudicium audietis esse iuratis declarat Nam nostra sed squalor cernitis dixistis Romani iudicantibus dixistis.', 
