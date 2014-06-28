@@ -3,3 +3,12 @@ sdz_blog:
     prefix:   /blog
     
 
+login:
+    pattern:   /login
+    defaults:  { _controller: SdzUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
