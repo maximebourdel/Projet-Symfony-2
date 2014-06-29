@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Httpfoundation\Response;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+
 // Attention à bien ajouter ce use en début de contrôleur
 // Entités
 use Sdz\BlogBundle\Entity\Article;
@@ -43,10 +45,14 @@ class BlogController extends Controller {
 				) );
 	}
 	
-	/**
-	 * @Secure(roles="ROLE_AUTEUR")
-	 */
 	public function ajouterAction() {
+		
+		// On teste que l'utilisateur dispose bien du rôle ROLE_AUTEUR
+		if (!$this->get('security.context')->isGranted('ROLE_AUTEUR')) {
+			// Sinon on déclenche une exception « Accès interdit »
+			throw new AccessDeniedHttpException('Accès limité aux auteurs');
+		}
+		
 		$article = new Article ();
 		
 		// On crée le formulaire grâce à l'ArticleType
