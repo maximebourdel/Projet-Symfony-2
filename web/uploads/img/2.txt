@@ -1,0 +1,59 @@
+SERVER STATOP
+zfNy19@3
+
+DATABASE STATOP
+>5!B8eC5fL%n
+
+
+background-color: blue;
+width: 50px;
+height: 50px;
+
+?>
+<pre>
+	<?php
+		print_r( $this->tableauRapports);
+	?>	
+</pre>
+<?php
+
+
+
+
+
+<?php
+		// on affiche les dates
+		$i = 0;
+		foreach ( $this->tableauRapports as $rapport ) {
+			echo "<input type=\"hidden\" name=\"rapport_" . $rapport ['id'] . "\" id=\"rapport_" . $rapport ['id'] . "\" value=\"" . $tableauRapportsSelectionne [$rapport ['id']] . "\" />";
+			echo "<span class=\"" . (($tableauRapportsSelectionne [$rapport ['id']] == true) ? "date_selectionne" : (($etatDate == "periode" && $i > $rapportMin && $i < $rapportMax) ? "date_afficher" : "date_non_afficher")) . "\" 
+			onclick=\"
+					if ( getElementById('selection_date').checked == true) {
+						ajaxApercuRapportGlobalMacroscopique(
+							" .$idProjet. ", 
+							getElementById('sav_top').value, ";
+			echo "'";
+			foreach ( $this->tableauRapports as $rapport2 ) {
+				//echo "<input type=\"hidden\" name=\"rapport_\" . $rapport2 ['id']\" value=\" (($rapport2 ['id'] == $rapport ['id']) ? (($tableauRapportsSelectionne [$rapport2 ['id']] == true) ? '0' : '1') : $tableauRapportsSelectionne [$rapport2 ['id']])\"> ";
+				echo "&rapport_" . $rapport2 ['id'] . "=" . (($rapport2 ['id'] == $rapport ['id']) ? (($tableauRapportsSelectionne [$rapport2 ['id']] == true) ? '0' : '1') : $tableauRapportsSelectionne [$rapport2 ['id']]);
+			}
+			echo "');";
+			echo "	} else {
+						ajaxApercuRapportGlobalMacroscopique(
+							" .$idProjet. ", 
+							getElementById('sav_top').value, ";
+			echo "'";
+			foreach ( $this->tableauRapports as $rapport2 ) {
+				if ($rapport2 ['id'] == $rapport ['id']) {
+					echo "&rapport_" . $rapport2 ['id'] . "=1";
+				} else {
+					echo "&rapport_" . $rapport2 ['id'] . "=0";
+				}
+			}
+			echo "');";
+			echo "	}\" >";
+			echo formateDate ( $rapport ['date'] );
+			echo "</span>";
+			$i ++;
+		}
+		?>
