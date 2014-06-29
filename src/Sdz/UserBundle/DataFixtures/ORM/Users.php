@@ -22,8 +22,8 @@ class Users implements FixtureInterface
       $users[$i]->setUsername($nom);
       $users[$i]->setPassword($nom);
 
-      // Le sel et les rôles sont vides pour l'instant
-      $users[$i]->setSalt('');
+      $users[$i]->setEmail($nom);
+      
       $users[$i]->setRoles(array());
 
       // On le persiste
