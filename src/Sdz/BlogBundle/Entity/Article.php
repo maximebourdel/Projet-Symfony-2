@@ -315,7 +315,7 @@ class Article
      */
     public function updateDate()
     {
-    	$this->setDateEdition(new \Datetime());
+    	$this->setDate(new \Datetime());
     }
 
     /**

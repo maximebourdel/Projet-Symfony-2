@@ -4,6 +4,7 @@ namespace Sdz\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Httpfoundation\Response;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 // Attention à bien ajouter ce use en début de contrôleur
 // Entités
@@ -16,6 +17,7 @@ use Sdz\BlogBundle\Form\ArticleType;
 use Sdz\BlogBundle\Form\ArticleEditType;
 
 class BlogController extends Controller {
+	
 	public function indexAction($page) {
 		// Pour récupérer la liste de tous les articles : on utilise findAll()
 		$articles = $this->getDoctrine ()->getManager ()->getRepository ( 'SdzBlogBundle:Article' )->getArticles ( 3, $page );
@@ -41,6 +43,9 @@ class BlogController extends Controller {
 				) );
 	}
 	
+	/**
+	 * @Secure(roles="ROLE_AUTEUR")
+	 */
 	public function ajouterAction() {
 		$article = new Article ();
 		

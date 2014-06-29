@@ -297,10 +297,10 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
-        <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_AUTEUR</parameter>
+        <parameter>ROLE_MODERATEUR</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
-        <parameter>ROLE_USER</parameter>
         <parameter>ROLE_ADMIN</parameter>
         <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
       </parameter>
@@ -628,8 +628,8 @@
     <parameter key="jms_di_extra.disable_grep">false</parameter>
     <parameter key="jms_di_extra.doctrine_integration">true</parameter>
     <parameter key="jms_di_extra.cache_warmer.controller_file_blacklist" type="collection"/>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/var/www/html/Symfony/app/cache/dev/jms_diextra/doctrine/EntityManager_53b041efc225c.php</parameter>
-    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager53b041efc225c_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.file">/var/www/html/Symfony/app/cache/dev/jms_diextra/doctrine/EntityManager_53b048ad567f3.php</parameter>
+    <parameter key="jms_di_extra.doctrine_integration.entity_manager.class">EntityManager53b048ad567f3_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1802,7 +1802,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>53b041ef958bd</argument>
+            <argument>53b048ad2799e</argument>
           </service>
         </argument>
       </argument>
@@ -1851,10 +1851,10 @@
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy">
       <argument type="collection">
         <argument key="ROLE_ADMIN" type="collection">
-          <argument>ROLE_USER</argument>
+          <argument>ROLE_AUTEUR</argument>
+          <argument>ROLE_MODERATEUR</argument>
         </argument>
         <argument key="ROLE_SUPER_ADMIN" type="collection">
-          <argument>ROLE_USER</argument>
           <argument>ROLE_ADMIN</argument>
           <argument>ROLE_ALLOWED_TO_SWITCH</argument>
         </argument>
@@ -1866,11 +1866,6 @@
         <service class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
           <argument type="service" id="service_container"/>
           <argument type="collection">
-            <argument key="security.firewall.map.context.dev" type="service">
-              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
-              </service>
-            </argument>
             <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
                 <argument>^/</argument>
@@ -1928,10 +1923,6 @@
           </service>
         </argument>
       </call>
-    </service>
-    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection"/>
-      <argument>null</argument>
     </service>
     <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection">
@@ -2066,7 +2057,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>53b041ef958bd</argument>
+            <argument>53b048ad2799e</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2526,8 +2517,8 @@
       <argument type="collection"/>
       <argument type="collection"/>
     </service>
-    <service id="doctrine.orm.default_entity_manager" class="EntityManager53b041efc225c_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
-      <file>/var/www/html/Symfony/app/cache/dev/jms_diextra/doctrine/EntityManager_53b041efc225c.php</file>
+    <service id="doctrine.orm.default_entity_manager" class="EntityManager53b048ad567f3_546a8d27f194334ee012bfe64f629947b07e4919\__CG__\Doctrine\ORM\EntityManager">
+      <file>/var/www/html/Symfony/app/cache/dev/jms_diextra/doctrine/EntityManager_53b048ad567f3.php</file>
       <argument type="service">
         <service class="Doctrine\ORM\EntityManager" factory-method="create" public="false">
           <argument type="service" id="doctrine.dbal.default_connection"/>
