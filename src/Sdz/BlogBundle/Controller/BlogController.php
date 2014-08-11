@@ -47,11 +47,6 @@ class BlogController extends Controller {
 	
 	public function ajouterAction() {
 		
-		// On teste que l'utilisateur dispose bien du rôle ROLE_AUTEUR
-		if (!$this->get('security.context')->isGranted('ROLE_AUTEUR')) {
-			// Sinon on déclenche une exception « Accès interdit »
-			throw new AccessDeniedHttpException('Accès limité aux auteurs');
-		}
 		
 		$article = new Article ();
 		
