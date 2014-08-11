@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use FOS\UserBundle\FOSUserBundle;
 
 class AppKernel extends Kernel
 {
@@ -23,7 +24,8 @@ class AppKernel extends Kernel
         	new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
         	new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new Sdz\UserBundle\SdzUserBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle()
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new FOS\UserBundle\FOSUserBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
