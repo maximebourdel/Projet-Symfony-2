@@ -23,7 +23,7 @@ class AppKernel extends Kernel
         	new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
         	new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new Sdz\UserBundle\SdzUserBundle(),
-        	new FOS\UserBundle\FOSUserBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

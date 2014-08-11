@@ -78,10 +78,30 @@ appelez la "symfony"
 ### Mise en place des tables la BDD
 ``$ php app/console doctrine:schema:update --force``
 
+### Mise en place des elements de test
+`` $ php app/console doctrine:fixtures:load ``
+
 
 PS : N'OUBLIEZ PAS DE MODIFIER LES INFORMATIONS CONCERNANT LA BASE DONNÉE. DANS LE DOSSIER:
 
 ``app/config/parameters.yml ``
+
+Des problemes avec l'écriture sur le cache?
+
+``HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+
+### Des problèmes avec l'écriture sur votre cache?
+
+``$ HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1` ``
+
+puis :
+
+``$ sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs``
+
+puis :
+
+``$ sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs``
+
 
 
 Enjoy ;)

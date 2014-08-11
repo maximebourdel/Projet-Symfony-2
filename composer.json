@@ -29,7 +29,8 @@
 		"twbs/bootstrap" : "3.2.*@dev",
 		"stof/doctrine-extensions-bundle" : "dev-master",
 		"jms/security-extra-bundle" : "1.5.*@dev",
-		"friendsofsymfony/user-bundle": "dev-master"
+		"friendsofsymfony/user-bundle" : "dev-master",
+		"egeloen/ckeditor-bundle" : "2.4.*@dev"
 	},
 	"scripts" : {
 		"post-install-cmd" : [
