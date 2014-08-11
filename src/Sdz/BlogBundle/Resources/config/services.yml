@@ -2,6 +2,8 @@ parameters:
 #    sdz_blog.example.class: Sdz\BlogBundle\Example
 
 services:
-#    sdz_blog.example:
-#        class: %sdz_blog.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sdzblog.beta_listener: 
+        class: Sdz\BlogBundle\Beta\BetaListener
+        arguments: ["2014-08-02"]
+        tags:
+                    - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
